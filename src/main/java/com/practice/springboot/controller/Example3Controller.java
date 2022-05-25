@@ -29,7 +29,7 @@ public class Example3Controller {
 	
 	//localhost:8080/example3/showForm
 	@GetMapping("/showForm")
-	public String showForm(Model model) {
+	public String showForm(Model model) { 
 		model.addAttribute("person", new Person());
 		return FORM_VIEW;
 	}
