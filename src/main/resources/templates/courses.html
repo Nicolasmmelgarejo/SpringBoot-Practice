@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Courses</title>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Price</th>
+					<th>Hours</th>
+				</tr>
+			</thead>
+			<tbody th:each="courseModel : ${courseModels}">
+				<tr>
+					<th><span th:text="${courseModel.name}"></span></th>
+					<th><span th:text="${courseModel.description}"></span></th>
+					<th><span th:text="${courseModel.price}"></span></th>
+					<th><span th:text="${courseModel.hours}"></span></th>   
+				</tr>
+			</tbody>
+		</table>
+		<form action="#" th:action="@{/courses/addcourse}" th:object="${courseModel}" method="post">
+			<p>Name: <input type="text" th:field="*{name}"/></p>
+			<p>Description: <input type="text" th:field="*{description}"/></p>
+			<p>Price: <input type="text" th:field="*{price}"/></p>
+			<p>Hours: <input type="text" th:field="*{hours}"/></p>
+			<p><input type="submit" value="Submit"/></p>
+		</form>
+		<form action="#" th:action="@{/courses//deletecourse}" th:object="${courseModel}" method="post">
+			<h1>Delete Course</h1>
+			<p>Id: <input type="text" th:field="*{id}"/></p>			
+			<p><input type="submit" value="Submit"/></p>
+		</form>
+	</body>
+</html>
