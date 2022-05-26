@@ -11,6 +11,7 @@ import com.practice.springboot.component.RequestTimeInterceptor;
 @SuppressWarnings("deprecation")
 @Configuration
 public class WebMvcConfiguration extends WebMvcConfigurerAdapter{
+	
 	@Autowired
 	@Qualifier("requestTimeInterceptor")
 	private RequestTimeInterceptor requestTimeInterceptor;

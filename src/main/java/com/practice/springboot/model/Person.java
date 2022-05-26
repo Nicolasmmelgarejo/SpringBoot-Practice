@@ -1,8 +1,18 @@
 package com.practice.springboot.model;
 
-public class Person {
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
+
+public class Person {
+	
+	@NotNull
+	@Size(min=3, max=6)
 	private String name;
+	
+	@NotNull
+	@Min(18)
 	private int age;
 
 	public Person(String name, int age) {
