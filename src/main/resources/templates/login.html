@@ -22,9 +22,9 @@
       	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         <h2 class="form-signin-heading">Sign in</h2>
         <label for="inputEmail" class="sr-only">Username</label>
-        <input type="text" class="form-control" placeholder="Username" neme="username" id="username"/>
+        <input type="text" class="form-control" placeholder="Username" name="username" id="username"/>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" class="form-control" placeholder="Password" neme="password" id="password"/>
+        <input type="password" class="form-control" placeholder="Password" name="password" id="password"/>
         <div th:if="${error != null}" class="alert alert-danger" role="alert">Invalid username or password!</div>
         <div th:if="${logout != null}" class="alert alert-info" role="alert">Logout successfully!</div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">
