@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
 
-<head>
+    <title>Backend Ninja - Signin</title>
 
-  <meta charset="UTF-8">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
-  <title>Acceso</title>
+    <!-- Custom styles for this template -->
+    <link href="#" th:href="@{/css/login.css}" rel="stylesheet" />
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
 
-  <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+  </head>
 
-    <link rel="stylesheet" href="../static/css/style.css" media="screen" type="text/css" />
+  <body>
 
-</head>
+    <div class="container">
 
-<body>
+      <form class="form-signin" th:action="@{/logincheck}" method="POST">
+      	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <h2 class="form-signin-heading">Sign in</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" class="form-control" placeholder="Username" neme="username" id="username"/>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" class="form-control" placeholder="Password" neme="password" id="password"/>
+        <div th:if="${error != null}" class="alert alert-danger" role="alert">Invalid username or password!</div>
+        <div th:if="${logout != null}" class="alert alert-info" role="alert">Logout successfully!</div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+        	<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Sign in
+        </button>
+      </form>
 
-
-  <div class="login-card">
-    <h1>Acceso <img class="candado"  src="../static/imgs/candado.png"></h1><br>
-     
-  <form>
-    <input type="text" name="user" placeholder="Username">
-    <input type="password" name="pass" placeholder="Password">
-    <input type="submit" name="login" class="login login-submit" value="Acceder">
-  </form>
-
-  <div class="login-help">
-    <a href="#">Forgot Password</a>
-  </div>
-</div>
-
+    </div> <!-- /container -->
 
 </body>
-
 </html>
