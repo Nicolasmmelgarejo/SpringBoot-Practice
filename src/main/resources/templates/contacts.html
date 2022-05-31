@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8"/>
 
-    <title>Backend Ninja - Signin</title>
+    <title>Backend Nicolas - Signin</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -19,7 +19,7 @@
 	
 	<div class="container">
 	
-		<h1>Hello, user!</h1>
+		<h1>Hello, <span th:text="${username}"></span>!</h1>
 		<br/>
 		<div class="panel panel-default">
 			<div class="panel-heading"></div>
@@ -63,6 +63,9 @@
 		<form  th:action="@{/logout}" method="POST">
 			<button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</button>
 		</form>
+		<a href="#" th:href="@{/rest/checkrest}">Rest Request!</a>
+		
+		
 	</div>
 
 
