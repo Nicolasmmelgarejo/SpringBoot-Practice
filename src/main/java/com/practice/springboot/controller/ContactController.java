@@ -35,7 +35,6 @@ public class ContactController {
 		return "redirect:/contacts/showcontacts";
 	}
 	
-	@PreAuthorize("hasRole('ROLE_USER')")
 	@GetMapping("/contactform")
 	private String redirectContactForm(@RequestParam(name="id", required=false) int id,
 			Model model) {
